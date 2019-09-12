@@ -1,0 +1,28 @@
+version: '2'
+services:
+  postgres:
+    image: bitnami/postgresql:11.4.0
+    container_name: postgres
+    hostname: postgres
+    environment:
+      - POSTGRESQL_USERNAME=template
+      - POSTGRESQL_PASSWORD=template
+      - POSTGRESQL_DATABASE=template
+    #  volumes:
+    #   - ./docker/volume/pg:/bitnami/postgresql
+    ports:
+      - 5432:5432
+  node1:
+    # fixme: template
+    image: scala-code-template:0.0.1
+    container_name: template
+    hostname: template
+    volumes:
+      - ./docker/conf/:/opt/docker/conf/
+      - ./docker/jolokia/:/opt/jolokia/
+    ports:
+      - 8080:8080 # http
+      - 8081:8081 # grpc
+      - 8558:8558 # management
+      - 7071:7070 # jolokia
+      - 2552:2552 # cluster

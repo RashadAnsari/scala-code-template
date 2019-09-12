@@ -1,0 +1,1 @@
+INSERT INTO templates VALUES (1, 'scala-code-template');
