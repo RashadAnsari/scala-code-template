@@ -59,7 +59,7 @@ lazy val management = Seq(
 
 libraryDependencies ++= Seq(
   "click.rashad" %% "scala-commons" % "1.0.11",
-  "click.rashad" %% "akka-scalapb-serialization" % "1.0.3"
+  "click.rashad" %% "akka-scalapb-serialization" % "1.0.4"
 ) ++ akka ++ akkaHttp ++ scalaPB ++ logging ++ testKits ++ management
 
 PB.targets in Compile := Seq(
